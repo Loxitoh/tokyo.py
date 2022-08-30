@@ -10,14 +10,14 @@ import tokyo
 import asyncio
 
 async def main():
-  json = await tokyo.Json.get(endpoint = '8ball', builders = {
-    'text': 'Am I gay?'
+  json = await tokyo.Json.get(endpoint = ..., builders = {
+    ...
   })
-  bytes = await tokyo.Buffer.get(endpoint = 'bart', builders = {
-    'text': 'Hi'
+  bytes = await tokyo.Buffer.get(endpoint = ..., builders = {
+    ...
   })
-  anime = await tokyo.Anime.get(endpoint = 'gifs', builders = [
-    'angry'
+  anime = await tokyo.Anime.get(endpoint = ..., builders = [
+    ...
   ])
   print(json, bytes, anime)
 
