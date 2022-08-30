@@ -23,7 +23,7 @@ async def main():
 
   # Parameter "endpoint" is the request endpoint string.
   # Parameter "builders" is the request parameters/route. {} for parameters, [] for route.
-  # ...(endpoint = '8ball', builders = {'text': 'Hi'})
+  # await tokyo.Json.get(endpoint = '8ball', builders = {'text': 'Hi'})
 
 asyncio.run(main())
 ```
