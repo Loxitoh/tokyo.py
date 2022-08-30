@@ -16,7 +16,7 @@ class Anime:
         '''Get the JSON response of the given endpoint'''
 
         dictionary = Api().endpoints
-        allowed_search_types = [
+        allowed_gif_types = [
             'angry',
             'baka',
             'bite',
@@ -44,9 +44,9 @@ class Anime:
             raise TypeError('Innapropiate argument type (list is required).')
         elif endpoint not in dictionary['ANIME']:
             raise TypeError(f'Could not find endpoint "{endpoint}" in the anime endpoints dictionary.')
-        elif endpoint == 'gifs' and parameters[0] not in allowed_search_types:
+        elif endpoint == 'gifs' and parameters[0] not in allowed_gif_types:
             raise TypeError(f'Could not find gif type "{parameters[0]}" in the anime gif types list.')
-        elif endpoint == 'gifs' and parameters[0] in allowed_search_types:
+        elif endpoint == 'gifs' and parameters[0] in allowed_gif_types:
             async with aiohttp.ClientSession() as session:
                 async with session.get(url = f'{Api().base}/anime/{endpoint}/{parameters[0]}') as response:
                     return await response.json()
