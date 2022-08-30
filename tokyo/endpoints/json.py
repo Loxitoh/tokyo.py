@@ -27,5 +27,5 @@ class Json:
             raise TypeError(f'Could not find endpoint "{endpoint}" in the JSON endpoints dictionary.')
 
         async with aiohttp.ClientSession() as session:
-            async with session.get(url = f'{Api().base}/json/{endpoint}', params = parameters) as response:
+            async with session.get(url = f'{Api().base}/json/{endpoint}', params = builders) as response:
                 return await response.json()
