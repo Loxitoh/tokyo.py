@@ -12,7 +12,7 @@ class Anime:
         `Get the JSON response of the given endpoint`
     '''
 
-    async def get(endpoint: str = None, parameters: dict = None) -> aiohttp.ClientResponse:
+    async def get(endpoint: str = None, builders: dict = None) -> aiohttp.ClientResponse:
         '''Get the JSON response of the given endpoint'''
 
         dictionary = Api().endpoints
@@ -36,21 +36,21 @@ class Anime:
 
         if endpoint is None:
             raise TypeError('Parameters cannot be empty.')
-        elif parameters is None:
+        elif builders is None:
             raise TypeError('Parameters cannot be empty.')
-        elif not endpoint == 'gifs' and not isinstance(parameters, dict):
+        elif not endpoint == 'gifs' and not isinstance(builders, dict):
             raise TypeError('Innapropiate argument type (dict is required).')
-        elif endpoint == 'gifs' and not isinstance(parameters, list):
+        elif endpoint == 'gifs' and not isinstance(builders, list):
             raise TypeError('Innapropiate argument type (list is required).')
         elif endpoint not in dictionary['ANIME']:
             raise TypeError(f'Could not find endpoint "{endpoint}" in the anime endpoints dictionary.')
-        elif endpoint == 'gifs' and parameters[0] not in allowed_gif_types:
-            raise TypeError(f'Could not find gif type "{parameters[0]}" in the anime gif types list.')
-        elif endpoint == 'gifs' and parameters[0] in allowed_gif_types:
+        elif endpoint == 'gifs' and builders[0] not in allowed_gif_types:
+            raise TypeError(f'Could not find gif type "{builders[0]}" in the anime gif types list.')
+        elif endpoint == 'gifs' and builders[0] in allowed_gif_types:
             async with aiohttp.ClientSession() as session:
-                async with session.get(url = f'{Api().base}/anime/{endpoint}/{parameters[0]}') as response:
+                async with session.get(url = f'{Api().base}/anime/{endpoint}/{builders[0]}') as response:
                     return await response.json()
         elif endpoint == 'search':
             async with aiohttp.ClientSession() as session:
-                async with session.get(url = f'{Api().base}/anime/{endpoint}', params = parameters) as response:
+                async with session.get(url = f'{Api().base}/anime/{endpoint}', params = builders) as response:
                     return await response.json()
