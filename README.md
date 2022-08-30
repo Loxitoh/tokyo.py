@@ -11,6 +11,7 @@ import asyncio
 from tokyo.properties import Api
 
 api = Api()
+print(api.endpoints)
 
 async def main():
   json = await tokyo.Json.get(endpoint = ..., builders = {
@@ -23,7 +24,6 @@ async def main():
     ...
   ])
   print(json, bytes, anime)
-  print(api.base)
 
   # Parameter "endpoint" is the request endpoint string.
   # Parameter "builders" is the request parameters/route. {} for parameters, [] for route.
