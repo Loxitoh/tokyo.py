@@ -5,7 +5,7 @@ Python library for interacting with Tokyo API (https://api.miduwu.ga/)
 ```pip install git+https://github.com/Loxitoh/tokyo.py.git```
 
 ## Usage
-```
+```py
 import tokyo
 import asyncio
 
@@ -20,4 +20,6 @@ async def main():
     'angry'
   ])
   print(json, bytes, anime)
+
+asyncio.run(main())
 ```
