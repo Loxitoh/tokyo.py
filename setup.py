@@ -20,6 +20,5 @@ setup(
         'tokyo.endpoints'
     ],
     include_package_data = True,
-    requires = requirements,
-    zip_safe = False
+    requires = requirements
 )
