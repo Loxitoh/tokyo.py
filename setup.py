@@ -1,4 +1,7 @@
 from setuptools import setup
+import re
+
+requirements = []
 
 with open('requirements.txt', 'r') as f:
     requirements = f.read().splitlines()
@@ -6,9 +9,17 @@ with open('requirements.txt', 'r') as f:
 with open('README.md', 'r') as f:
     readme = f.read()
 
+version = ''
+
+with open('tokyo/__init__.py') as f:
+    version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
+
+if not version:
+    raise RuntimeError('Could not find __version__ in __init__.py file.')
+
 setup(
     name = 'tokyo.py',
-    version = '0.0.1',
+    version = version,
     description = 'Python library for interacting with Tokyo API (https://api.miduwu.ga/)',
     long_description = readme,
     url = 'https://github.com/Loxitoh/tokyo.py',
