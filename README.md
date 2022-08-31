@@ -2,7 +2,7 @@
 Python library for interacting with Tokyo API (https://api.miduwu.ga/)
 
 ## Installation
-`pip install git+https://github.com/Loxitoh/tokyo.py.git`
+`pip install tokyo.py`
 
 ## Usage
 ```py
