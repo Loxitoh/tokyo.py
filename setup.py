@@ -22,6 +22,7 @@ setup(
     version = version,
     description = 'Python library for interacting with Tokyo API (https://api.miduwu.ga/)',
     long_description = readme,
+    long_description_content_type = 'text/x-rst',
     url = 'https://github.com/Loxitoh/tokyo.py',
     author = 'Loxitoh',
     author_email = 'loxitoh@gmail.com',
