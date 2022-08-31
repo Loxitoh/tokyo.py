@@ -31,5 +31,5 @@ setup(
         'tokyo.endpoints'
     ],
     include_package_data = True,
-    requires = requirements
+    install_requires = requirements
 )
