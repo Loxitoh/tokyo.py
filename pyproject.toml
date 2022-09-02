@@ -10,7 +10,7 @@ include = [
 
 [project]
 name = 'tokyo.py'
-version = '0.0.2'
+version = '0.0.4'
 authors = [
   { name = 'Loxitoh', email = 'loxitoh@gmail.com' },
 ]
