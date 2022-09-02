@@ -1,3 +1,5 @@
+'''Tokyo API properties module'''
+
 class Api():
     '''
     Tokyo API properties class
